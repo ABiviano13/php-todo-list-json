@@ -4,10 +4,25 @@ createApp({
 
     data() {
         return {
-            todoList: []
+            todoList: [],
+            newTask: ''
         }
     },
     methods: {
+        saveNewTask() {
+            // console.log(newTask);
+            $data = {
+                task: this.newTask
+            },
+
+            axios
+                .post('./items.php', $data, {
+                    headers: {
+                        'Content-Type' : 'multipart/form-data'
+                    } 
+                })
+
+        },
         fetchList(){
             axios
                 .get('./items.php')

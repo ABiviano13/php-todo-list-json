@@ -20,9 +20,13 @@
                     Todo List
                 </h1>
 
+                <input type="text" name="new_task" placeholder="New Task" @keyup.enter="saveNewTask" v-model="newTask">
+
                 <ol class="list-group list-group-numbered">
-                    <li class="list-group-item" v-for="item in todoList">
-                        {{item}}
+                    <li class="list-group-item" 
+                    v-for="item in todoList"
+                    >
+                        {{item.text}}
                     </li>
                 </ol>
 
