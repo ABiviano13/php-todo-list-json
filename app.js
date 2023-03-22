@@ -10,11 +10,13 @@ createApp({
     methods: {
         fetchList(){
             axios
-                .get('items.php')
-                .then(res => {
+                .get('./items.php')
+                .then((res) => {
                     console.log(res.data);
-                }).catch(error => {
+                    this.todoList = res.data;
+                }).catch((error) => {
                     console.log(error);
+                    this.todoList = [];
                 })
         }
     },
