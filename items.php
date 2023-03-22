@@ -1,13 +1,7 @@
 <?php
 
-$items = [
-    'html',
-    'css',
-    'javascript',
-    'php',
-    'laravel'
-];
+$todo_string = file_get_contents('./items.json');
 
 header('Content-type: application/json');
 
-echo json_encode($items);
+echo json_encode($todo_string);
