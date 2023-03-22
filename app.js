@@ -18,9 +18,16 @@ createApp({
             axios
                 .post('./items.php', $data, {
                     headers: {
-                        'Content-Type' : 'multipart/form-data'
-                    } 
+						'Content-Type': 'multipart/form-data'
+					}
                 })
+                .then((res) => {
+					this.todoList = res.data;
+					this.newTask = '';
+				})
+				.catch((error) => {
+					console.log(error);
+				})
 
         },
         fetchList(){
@@ -29,7 +36,8 @@ createApp({
                 .then((res) => {
                     console.log(res.data);
                     this.todoList = res.data;
-                }).catch((error) => {
+                })
+                .catch((error) => {
                     console.log(error);
                     this.todoList = [];
                 })

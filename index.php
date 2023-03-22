@@ -20,9 +20,9 @@
                     Todo List
                 </h1>
 
-                <input type="text" name="new_task" placeholder="New Task" @keyup.enter="saveNewTask" v-model="newTask">
+                <input class="form-control" type="text" name="new_task" placeholder="New Task" @keyup.enter="saveNewTask" v-model="newTask">
 
-                <ol class="list-group list-group-numbered">
+                <ol class="list-group list-group-numbered mt-2">
                     <li class="list-group-item" 
                     v-for="item in todoList"
                     >
