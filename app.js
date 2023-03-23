@@ -11,12 +11,12 @@ createApp({
     methods: {
         saveNewTask() {
             // console.log(newTask);
-            $data = {
+            let data = {
                 task: this.newTask
-            },
+            }
 
             axios
-                .post('./items.php', $data, {
+                .post('./items.php', data, {
                     headers: {
 						'Content-Type': 'multipart/form-data'
 					}
@@ -34,7 +34,7 @@ createApp({
             axios
                 .get('./items.php')
                 .then((res) => {
-                    console.log(res.data);
+                    // console.log(res.data);
                     this.todoList = res.data;
                 })
                 .catch((error) => {
